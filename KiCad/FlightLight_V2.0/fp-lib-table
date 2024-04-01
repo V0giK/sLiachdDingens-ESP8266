@@ -1,0 +1,4 @@
+(fp_lib_table
+  (lib (name Panelization)(type KiCad)(uri C:/Users/Buero/Downloads/Projekte/KiCad/Bibliothek/Panelization.pretty)(options "")(descr ""))
+  (lib (name ViKay)(type KiCad)(uri C:/Users/Buero/Downloads/Projekte/KiCad/Bibliothek/ViKay.pretty)(options "")(descr ""))
+)
