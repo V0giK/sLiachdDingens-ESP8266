@@ -3879,7 +3879,7 @@
 	)
 	(wire
 		(pts
-			(xy 160.02 107.95) (xy 160.02 127)
+			(xy 160.02 107.95) (xy 160.02 118.11)
 		)
 		(stroke
 			(width 0)
@@ -4536,6 +4536,16 @@
 			(type default)
 		)
 		(uuid "d6cad9c4-edcc-400f-90b9-32a0069982a3")
+	)
+	(wire
+		(pts
+			(xy 160.02 125.73) (xy 160.02 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d71f1a38-ce34-469d-bee5-e44e1f37da9d")
 	)
 	(wire
 		(pts
@@ -6185,7 +6195,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100nF"
+		(property "Value" "100n"
 			(at 173.101 130.683 0)
 			(effects
 				(font
@@ -6430,6 +6440,75 @@
 			(project "FlightLight"
 				(path "/1ec19e6d-0844-4ed7-9061-0a9fb2bcdc9b"
 					(reference "#PWR04")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R")
+		(at 160.02 121.92 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "11430c47-cdad-4074-a01a-13116a6d96bd")
+		(property "Reference" "R11"
+			(at 158.242 123.0884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "680k"
+			(at 158.242 120.777 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder"
+			(at 161.798 121.92 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 160.02 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 160.02 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "78b74fa9-60a3-4fff-a885-96ef872bdd88")
+		)
+		(pin "1"
+			(uuid "764578f1-7ca8-468d-9fde-a85d971ff5aa")
+		)
+		(instances
+			(project "FlightLight"
+				(path "/1ec19e6d-0844-4ed7-9061-0a9fb2bcdc9b"
+					(reference "R11")
 					(unit 1)
 				)
 			)
@@ -7534,7 +7613,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1300k"
+		(property "Value" "680k"
 			(at 158.242 129.667 0)
 			(effects
 				(font
