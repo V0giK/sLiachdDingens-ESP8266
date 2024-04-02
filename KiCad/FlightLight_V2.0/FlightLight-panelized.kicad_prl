@@ -14,7 +14,6 @@
       "vias": 1.0,
       "zones": 0.6
     },
-    "ratsnest_display_mode": 0,
     "selection_filter": {
       "dimensions": true,
       "footprints": true,
@@ -35,15 +34,12 @@
       3,
       4,
       5,
-      6,
-      7,
       8,
       9,
       10,
       11,
       12,
       13,
-      14,
       15,
       16,
       17,
@@ -68,7 +64,7 @@
       39,
       40
     ],
-    "visible_layers": "fffffff_ffffffff",
+    "visible_layers": "003ffff_80000001",
     "zone_display_mode": 0
   },
   "git": {
@@ -78,7 +74,7 @@
     "ssh_key": ""
   },
   "meta": {
-    "filename": "FlightLight.kicad_prl",
+    "filename": "FlightLight-panelized.kicad_prl",
     "version": 3
   },
   "project": {
