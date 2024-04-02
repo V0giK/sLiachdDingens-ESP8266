@@ -692,7 +692,7 @@
 		(descr "Capacitor SMD 1206 (3216 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor handsolder")
 		(property "Reference" "C2"
-			(at 0 -1.85 270)
+			(at 0 -1.85 -90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "a952c6bb-7bc5-43ab-93b1-d4d177b2b858")
@@ -704,7 +704,7 @@
 			)
 		)
 		(property "Value" "100n"
-			(at -4.4375 0.022424 270)
+			(at -4.4375 0.022424 -90)
 			(layer "F.SilkS")
 			(uuid "7a339185-d2f6-4fae-b25d-cece3de54d9a")
 			(effects
@@ -750,7 +750,10 @@
 				)
 			)
 		)
+		(property ki_fp_filters "C_*")
 		(path "/00000000-0000-0000-0000-00006198ea4f")
+		(sheetname "Stammblatt")
+		(sheetfile "FlightLight.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.711252 0.91)
@@ -2046,7 +2049,10 @@
 				)
 			)
 		)
+		(property ki_fp_filters "CP_*")
 		(path "/fd9dc92a-6e6c-46d5-9265-a07c189956a8")
+		(sheetname "Stammblatt")
+		(sheetfile "FlightLight.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.711252 -0.91)
@@ -2885,7 +2891,7 @@
 		(descr "Capacitor SMD 1206 (3216 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
 		(tags "capacitor handsolder")
 		(property "Reference" "C4"
-			(at 0 -1.85 270)
+			(at 0 -1.85 -90)
 			(layer "F.Fab")
 			(hide yes)
 			(uuid "df15f5a8-5910-4532-9937-6702e52471b6")
@@ -2897,7 +2903,7 @@
 			)
 		)
 		(property "Value" "10u"
-			(at 4.0625 0 270)
+			(at 4.0625 0 -90)
 			(layer "F.SilkS")
 			(uuid "e51b2522-811f-4fa2-b894-a7c68b35a00f")
 			(effects
@@ -2943,7 +2949,10 @@
 				)
 			)
 		)
+		(property ki_fp_filters "CP_*")
 		(path "/3f95855d-a96c-4e17-9c50-faffecfc8fe0")
+		(sheetname "Stammblatt")
+		(sheetfile "FlightLight.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.711252 0.91)
@@ -3151,7 +3160,10 @@
 				)
 			)
 		)
+		(property ki_fp_filters "R_*")
 		(path "/ed66d2bf-b612-4031-9cd6-db175db9946b")
+		(sheetname "Stammblatt")
+		(sheetfile "FlightLight.kicad_sch")
 		(attr smd)
 		(fp_line
 			(start -0.727064 -0.91)
