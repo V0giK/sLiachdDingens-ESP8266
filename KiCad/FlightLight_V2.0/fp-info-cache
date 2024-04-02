@@ -1,4 +1,4 @@
-23131848456416863
+23169055109515887
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -82977,6 +82977,104 @@ TO-264-5 Vertical RM 3.81mm
 0
 5
 5
+Panelization
+C_0805_2012Metric_Pad1.18x1.45mm_HandSolder
+Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator
+capacitor handsolder
+0
+2
+2
+Panelization
+Conn_01x01_2.54_big
+
+
+0
+1
+1
+Panelization
+Conn_01x03_2.54_small
+
+
+0
+3
+3
+Panelization
+LED_D3.0mm
+LED, diameter 3.0mm, 2 pins
+LED diameter 3.0mm 2 pins
+0
+2
+2
+Panelization
+PinHeader_2x10_P2.54mm_Vertical
+Through hole straight pin header, 2x10, 2.54mm pitch, double rows
+Through hole pin header THT 2x10 2.54mm double row
+0
+20
+20
+Panelization
+R_1206_3216Metric_Pad1.42x1.75mm_HandSolder
+Resistor SMD 1206 (3216 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+resistor handsolder
+0
+2
+2
+Panelization
+SO-16_3.9x9.9mm_P1.27mm
+SO, 16 Pin (https://www.nxp.com/docs/en/package-information/SOT109-1.pdf), generated with kicad-footprint-generator ipc_gullwing_generator.py
+SO SO
+0
+16
+16
+Panelization
+SW_PUSH_6mm_H4.3mm
+tactile push button, 6x6mm e.g. PHAP33xx series, height=4.3mm
+tact sw push 6mm
+0
+4
+2
+Panelization
+WEMOS_D1_mini_light
+16-pin module, column spacing 22.86 mm (900 mils), https://wiki.wemos.cc/products:d1:d1_mini, https://c1.staticflickr.com/1/734/31400410271_f278b087db_z.jpg
+ESP8266 WiFi microcontroller
+0
+16
+16
+Panelization
+mouse-bite-1mm-slot
+
+
+0
+0
+0
+Panelization
+mouse-bite-2.54mm-slot
+
+
+0
+0
+0
+Panelization
+mouse-bite-2mm-slot
+
+
+0
+0
+0
+Panelization
+mouse-bite-3mm-slot
+
+
+0
+0
+0
+Panelization
+mouse-bite-5mm-slot
+
+
+0
+0
+0
 Potentiometer_SMD
 Potentiometer_ACP_CA6-VSMD_Vertical
 Potentiometer, vertical, ACP CA6-VSMD, http://www.acptechnologies.com/wp-content/uploads/2017/06/01-ACP-CA6.pdf
@@ -94738,12 +94836,40 @@ Varistor VF
 2
 2
 ViKay
+C_0805_2012Metric_Pad1.15x1.40mm_HandSolder
+Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator
+capacitor handsolder
+0
+2
+2
+ViKay
+Conn_01x01_2.54
+
+
+0
+1
+1
+ViKay
 Conn_01x01_2.54_big
 
 
 0
 1
 1
+ViKay
+Conn_01x01_2.54_small
+
+
+0
+1
+1
+ViKay
+Conn_01x03_2.54
+
+
+0
+3
+3
 ViKay
 Conn_01x03_2.54_small
 
@@ -94752,16 +94878,51 @@ Conn_01x03_2.54_small
 3
 3
 ViKay
-ESP-12S
-Wi-Fi Module
-Wi-Fi Module
+MPX Adapter
+
+
 0
-16
-16
+6
+4
 ViKay
-SW_Push_1P1T_NO_4.5x4.5mm_H7mm
-tactile push button, 6x6mm e.g. PTS645xx series, height=9.5mm
-tact sw push 6mm smd
+MPX_Adapter_small_4Pol
+
+
 0
 4
+4
+ViKay
+MPX_Adapter_small_6Pol
+
+
+0
+6
+4
+ViKay
+R_0805_2012Metric_Pad1.15x1.40mm_HandSolder
+Resistor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator
+resistor handsolder
+0
 2
+2
+ViKay
+SOIC-14_3.9x8.7mm_P1.27mm
+14-Lead Plastic Small Outline (SL) - Narrow, 3.90 mm Body [SOIC] (see Microchip Packaging Specification 00000049BS.pdf)
+SOIC 1.27
+0
+14
+14
+ViKay
+SOT-23
+SOT-23, Standard
+SOT-23
+0
+3
+3
+ViKay
+SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm
+SMD Solder 3-pad Jumper, 1x1.5mm rounded Pads, 0.3mm gap, open
+solder jumper open
+0
+3
+3
