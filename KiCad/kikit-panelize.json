@@ -1,0 +1,18 @@
+{
+    "layout": {
+        "hspace": "2mm",
+        "vspace": "2mm",
+        "rows": "2",
+        "cols": "2"
+    },
+    "tabs": {
+        "spacing": "15mm"
+    },
+    "cuts": {
+        "type": "mousebites",
+        "prolong": "0.5mm"
+    },
+    "post": {
+        "millradius": "1mm"
+    }
+}
