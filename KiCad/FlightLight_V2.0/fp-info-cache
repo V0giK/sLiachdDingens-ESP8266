@@ -1,4 +1,4 @@
-23150031179059501
+23156873464918200
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -94842,3 +94842,31 @@ tact sw push 6mm smd
 0
 4
 2
+kikit
+Board
+Mark board for extraction
+
+0
+0
+0
+kikit
+Fiducial
+Circular Fiducial
+fiducial
+0
+1
+0
+kikit
+NPTH
+
+
+0
+0
+0
+kikit
+Tab
+A symbol representing annotation for tab placement
+
+0
+0
+0
