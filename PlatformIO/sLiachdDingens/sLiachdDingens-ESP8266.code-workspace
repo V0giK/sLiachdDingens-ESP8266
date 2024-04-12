@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		},
+		{
+			"name": "sLiachdDingens",
+			"path": "."
+		},
+		{
+			"name": "Default OTA",
+			"path": "../Default OTA"
+		}
+	],
+	"settings": {}
+}
