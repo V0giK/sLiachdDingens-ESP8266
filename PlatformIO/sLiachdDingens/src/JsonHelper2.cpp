@@ -316,7 +316,8 @@ boolean JsonHelper2::readDeleteEraseJsonHW(EepromFunctions& clsEeprom){
         // Copy values from the JsonDocument to the Config
         if(doc.containsKey("erase") && doc["erase"] == 1)
             clsEeprom.eraseEeprom();
-        clsEeprom.loadEeprom();
+        else
+            clsEeprom.loadEeprom();
 
         EepromFunctions::EEPROM_Data strcEeprom = clsEeprom.getEeprom();        
         strcEeprom.hwVersion       = doc["HwVersion"]   | "";
