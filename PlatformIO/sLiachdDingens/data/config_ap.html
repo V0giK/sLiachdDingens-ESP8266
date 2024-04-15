@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="de"> 
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>FlightLight - Config AccessPoint</title>
+		<link rel="stylesheet" type="text/css" href="css/index_html.css">
+		<link rel="stylesheet" type="text/css" href="css/w3.css">
+		<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+		<script type="text/javascript" src="js/functions.js"></script>
+	</head>
+	<body>
+		<noscript>
+			<strong>Die FlightLight Konfiguration funktioniert nicht ohne JavaScript. Biite aktiviere JavaScript und versuche es erneut.</strong>
+		</noscript>
+		<!-- Menü -->
+		<div id="includedMenuContent"></div>
+		<!-- AP Daten -->
+		<div class="textstyle1">
+
+			<form  action="/config_config" enctype="application/x-www-form-urlencoded" method="POST" id="formular">
+				<!-- Daten Config -->
+				<div class="container_2572aa03">
+					<div class="container_2572aa03_padding" >
+						<div class="textstyle1">
+							<span class="textstyle4">AccessPoint</span>
+							<div id="form_sequence_padding" >
+								<div class="textstyle1">
+									<span class="textstyle4">Modell Bezeichnung<br/></span>
+									<input class="LPNAME" type="text" value="" title="" name="ModelName" required="required" maxlength="25"  id="ModelName" onChange="setFormChangedConf(true);" >
+									<span class="textstyle4"><br/><br/>AccesPoint<br/></span>
+									<input name="CheckBox3" type="checkbox" value="1" title="" checked="checked"  id="checkbox_62a35519" disabled="disabled" >
+									<span class="textstyle4">SSID<br/></span>
+									<input class="LPNAME" type="text" value="" title="" name="AP_SSID" required="required" maxlength="25"  id="AP_SSID" onChange="setFormChangedConf(true);" >
+									<span class="textstyle4"><br/>Passwort<br/></span>
+									<!--<input class="LPNAME" type="password" value="" title="" name="AP_PWD" required="required" minlength="8" maxlength="25"  id="AP_PWD" onChange="setFormChangedConf(true);" >-->
+									<input class="LPNAME" type="text" value="" title="" name="AP_PWD" required="required" minlength="8" maxlength="25"  id="AP_PWD" onChange="setFormChangedConf(true);" >
+									<span class="textstyle4"><br/>IP-Adress<br/></span>
+									<input class="LPNAME" type="text" value="" title="" name="AP_IP" minlength="12" maxlength="12"  id="AP_IP" disabled="disabled" >
+								</div>
+								<div style="clear:both"></div>
+							</div>
+						</div>
+						<div style="clear:both"></div>
+					</div>
+				</div>
+
+				<div><br/><br/></div>
+
+				<div class="w3-bar menuRow w3-bottom">
+					<button class="w3-bar-item w3-button" type="button" form="formular" onClick="setFormSubmittedConf(true);saveForm('/config_config', 'save', form);" value="save" title="Speichern">Speichern</button>
+					<button class="w3-bar-item w3-button w3-right" type="button" form="form_pwr" onClick="resetEsp();" value="HW_Reset" title="Neu starten">HW Reset</button>
+				</div>
+			</form>
+		</div>
+
+		<!-- Modal Box -->
+		<div id="MsgBox"></div>
+
+	</body>
+	<script type="text/javascript">
+		// Objekt des Formulars das zum speichern dessen als Parameter an saveForm() mitgegeben werden muss
+		let form = document.forms["formular"];
+
+		// MsgBox erstellen
+		crtMsgBox("Info");
+		// config.json einlesen
+		readConfig();
+		// setTitel
+		setTitel("Config AccessPoint");
+
+		crtConfigConfigValues();
+		
+		// beim verlassen der Seite prüfen ob schon gespeichert wurde
+		checkFormOnLeaveConfig_html();
+	</script>
+</html>

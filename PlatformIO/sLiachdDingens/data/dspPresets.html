@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de"> 
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>FlightLight - Presets</title>
+		<link rel="stylesheet" type="text/css" href="css/index_html.css">
+		<link rel="stylesheet" type="text/css" href="css/w3.css">
+		<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+		<script type="text/javascript" src="js/functions.js"></script>
+	</head>
+
+	<body>
+		<noscript>
+			<strong>Die FlightLight Konfiguration funktioniert nicht ohne JavaScript. Biite aktiviere JavaScript und versuche es erneut.</strong>
+		</noscript>
+		<!-- Menü -->
+		<div id="includedMenuContent"></div>
+		<!-- Presets -->
+		<div class="textstyle1 w3-main">
+
+			<div id="container_2572aa03" style>
+				<div id="container_2572aa03_padding" >
+					<div class="textstyle1">
+						<div id="form_sequence_padding" >
+							<div class="textstyle1">
+								<section id="presets"></section>
+								<div style="clear:both"></div>
+							</div>
+						</div>
+						<div style="clear:both"></div>
+					</div>
+				</div>
+			</div>
+	
+		</div>
+	</body>
+
+	<script type="text/javascript">
+		// config.json einlesen
+		readConfig();
+		// setTitel
+		setTitel("Presets");
+
+		// Preset Tabelle erzeugen
+		crtPresetTable("/json/lightPresets.json", document.getElementById("presets"));
+	</script>
+</html>

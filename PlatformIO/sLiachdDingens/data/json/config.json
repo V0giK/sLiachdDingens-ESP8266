@@ -1,0 +1,18 @@
+{
+	"file" : "config",
+	"ProductName" : "sLiachdDingens_V2",
+	"FwVersion" : "1.0",
+	"WebVersion" : "1.0",
+	"ModelName" : "sLiachdDingens",
+	"AP" :
+	{
+		"ssid" : "sLiachdDingens",
+		"pwd" : "",
+		"ip" : "1.2.3.4"
+	},
+	"Batt" :
+	{
+		"warningVolt" : 3.5,
+		"cutOffVolt" : 3.2
+	}
+}

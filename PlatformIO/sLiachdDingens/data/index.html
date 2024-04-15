@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="de"> 
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>FlightLight - Ports</title>
+		<link rel="stylesheet" type="text/css" href="css/index_html.css">
+		<link rel="stylesheet" type="text/css" href="css/w3.css">
+		<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+		<script type="text/javascript" src="js/functions.js"></script>
+	</head>
+	<body>
+		<noscript>
+			<strong>Die FlightLight Konfiguration funktioniert nicht ohne JavaScript. Biite aktiviere JavaScript und versuche es erneut.</strong>
+		</noscript>
+		<!-- Menü -->
+		<div id="includedMenuContent"></div>
+		<!-- Ports -->
+		<div class="textstyle1">
+
+			<form  action="" enctype="application/x-www-form-urlencoded" method="POST" id="formular">
+
+				<section id="ports"></section>
+				<div><br/><br/></div>
+				<div class="w3-bar menuRow w3-bottom">
+					<button class="w3-bar-item w3-button" type="button" form="formular" onClick="setFormPreview(true);saveForm('/LightSequence', 'prev', form, false);" value="prev" title="Vorschau">Vorschau</button>
+					<button class="w3-bar-item w3-button" type="button" form="formular" onClick="setFormPreview(true);saveForm('/LightSequence', 'save', form);" value="save" title="Speichern">Speichern</button>
+					<!--<button class="w3-bar-item w3-button" type="reset" form="formular" value="save" title="Reset">Reset</button>-->
+					<button class="w3-bar-item w3-button w3-right" type="button" form="formular" onClick="resetEsp();" value="HW_Reset" title="Neu starten">HW Reset</button>
+				</div>
+			</form>
+		</div>
+		<!-- Modal Box -->
+		<div id="MsgBox"></div>
+	</body>
+
+	<script type="text/javascript">
+		// Objekt des Formulars das zum speichern dessen als Parameter an saveForm() mitgegeben werden muss
+		let form = document.forms["formular"];
+
+		// MsgBox erstellen
+		crtMsgBox("Info");
+		// config.json einlesen
+		readConfig();
+		// lightPresets.json einlesen
+		readLightPreset();
+		// lightSequence.json einlesen
+		readLightSequence();
+		// setTitel
+		setTitel("Ports");
+
+		// LightPort HTML erstellen und in innerHtml laden
+		crtLightPorts("ports");
+
+		// beim verlassen der Seite prüfen ob schon gespeichert wurde
+		checkFormOnLeave();
+
+	</script>
+</html>

@@ -1,0 +1,9 @@
+{
+	"file" : "hw",
+	"HwVersion" : "3",
+	"PortCnt" : 5,
+	"ProfileCnt" : 3,
+	"SlotCnt" : 20,
+	"erase" : 1,
+	"CalibFactor" : 1.0
+}
