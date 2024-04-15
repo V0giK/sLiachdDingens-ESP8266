@@ -5073,7 +5073,7 @@
 			)
 		)
 	)
-	(global_label "TX"
+	(global_label "D8"
 		(shape input)
 		(at 82.55 134.62 180)
 		(fields_autoplaced yes)
@@ -5085,7 +5085,7 @@
 		)
 		(uuid "55b2baf7-be53-4315-bf87-40b0711749e7")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 78.0419 134.62 0)
+			(at 77.7395 134.62 0)
 			(effects
 				(font
 					(size 1.27 1.27)
