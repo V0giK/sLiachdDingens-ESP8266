@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>FlightLight - Im-/Export</title>
+		<link rel="stylesheet" type="text/css" href="css/index_html.css">
+		<link rel="stylesheet" type="text/css" href="css/w3.css">
+		<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+		<script type="text/javascript" src="js/functions.js"></script>
+	</head>
+	<body>
+		<noscript>
+			<strong>Die FlightLight Konfiguration funktioniert nicht ohne JavaScript. Biite aktiviere JavaScript und versuche es erneut.</strong>
+		</noscript>
+		<!-- Menü -->
+		<div id="includedMenuContent"></div>
+		<!-- Sichern / Wiederherstellen -->
+		<div class="textstyle1">
+			<!-- Sichern -->
+			<div class="container_2572aa03">
+				<div class="container_2572aa03_padding" >
+					<div class="textstyle1">
+						<label class="textstyle4">Sichern<br/></label>
+							<div class="form_sequence_padding" >
+								<div class="textstyle1">
+									<input type="button" id='downSeq' value="Download lightProfil" onClick="download('/json/lightProfil.json');" /><br/><br/>
+									<input type="button" id='downPreset' value="Download lightPresets" onClick="download('/json/lightPresets.json');" /><br/><br/>
+									<input type="button" id='downConfig' value="Download config" onClick="download('/json/config.json');" />
+								<div style="clear:both"></div>
+							</div>
+						</div>
+						<div style="clear:both"></div>
+					</div>
+				</div>
+			</div>
+			<!-- Wiederherstellen -->
+			<div class="container_2572aa03">
+				<div class="container_2572aa03_padding" >
+					<div class="textstyle1">
+						<label class="textstyle4">Wiederherstellen<br/></label>
+							<form  action="/upload" enctype="multipart/form-data" method="POST" id="formular">
+								<div class="form_sequence_padding" >
+									<div class="textstyle1">
+										<input type="file" value="" title="" name="datei" id="datei" size="50" accept="application/json" >
+										<br/><br/>
+										<!--<input type="submit" value="Upload" title="Datei wiederherstellen" >-->
+										<button type="button" form="formular" onClick="setFormSubmitted(true);saveForm('/upload', 'save', form);" value="Upload" title="Datei wiederherstellen">Upload</button>
+									</div>
+									<div style="clear:both"></div>
+								</div>
+							</form>
+						</div>
+						<div style="clear:both"></div>
+					</div>
+				</div>
+			</div>
+
+			<div><br/><br/></div>
+
+			<div class="w3-bar menuRow w3-bottom">
+				<button class="w3-bar-item w3-button w3-right" type="button" form="form_pwr" onClick="resetEsp();" value="HW_Reset" title="Neu starten">HW Reset</button>
+			</div>
+		</div>
+
+		<!-- Modal Box -->
+		<div id="MsgBox"></div>
+
+		<script>
+			// Objekt des Formulars das zum speichern dessen als Parameter an saveForm() mitgegeben werden muss
+			let form = document.forms["formular"];
+
+			// MsgBox erstellen
+			crtMsgBox("Info");
+			// config.json einlesen
+			readConfig();
+			// setTitel
+			setTitel("Firmware");
+		</script>
+
+	</body>
+</html>

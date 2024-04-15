@@ -1,0 +1,169 @@
+{
+	"file" : "presets",
+	"Version" : "1.0",
+	"presets" : 
+	[
+		{
+			"ID" : 1,
+			"name" : "Light On",
+			"description" : "LP On 100% Power",
+			"seq" :
+			[
+				8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8
+			]
+		},
+		{
+			"ID" : 2,
+			"name" : "Light Half On",
+			"description" : "LP On 50% Power",
+			"seq" :
+			[
+				4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4
+			]
+		},
+		{
+			"ID" : 3,
+			"name" : "Light Min On",
+			"description" : "LP On minimum Power",
+			"seq" :
+			[
+				1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+			]
+		},
+		{
+			"ID" : 4,
+			"name" : "Light Off",
+			"description" : "LP Off",
+			"seq" :
+			[
+				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+			]
+		},
+		{
+			"ID" : 5,
+			"name" : "Regular Beacon",
+			"description" : "Beacon, Anti Collision Light, 50% On 50% Off",
+			"seq" :
+			[
+				8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+			]
+		},
+		{
+			"ID" : 6,
+			"name" : "Short Beacon",
+			"description" : "Modern short Beacon",
+			"seq" :
+			[
+				8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+			]
+		},
+		{
+			"ID" : 7,
+			"name" : "Incandecent Beacon",
+			"description" : "Typical Incandecent Bulb afterglow",
+			"seq" :
+			[
+				8, 8, 8, 8, 8, 8, 8, 8, 8, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+			]
+		},
+		{
+			"ID" : 8,
+			"name" : "Rotating Beacon",
+			"description" : "Old rotating Beacon",
+			"seq" :
+			[
+				1, 2, 3, 4, 5, 6, 7, 8, 8, 5, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0
+			]
+		},
+		{
+			"ID" : 9,
+			"name" : "Strobe Light 1",
+			"description" : "Single Pulse Strobe Light",
+			"seq" :
+			[
+				8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+			]
+		},
+		{
+			"ID" : 10,
+			"name" : "Strobe Light 2",
+			"description" : "Double Pulse Strobe Light",
+			"seq" :
+			[
+				8, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+			]
+		},
+		{
+			"ID" : 11,
+			"name" : "Strobe Light 3",
+			"description" : "Tripple Pulse Strobe Light",
+			"seq" :
+			[
+				8, 0, 8, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+			]
+		},
+		{
+			"ID" : 12,
+			"name" : "Multi Strobe Light",
+			"description" : "Multi Pulse Strobe Light",
+			"seq" :
+			[
+				8, 0, 8, 0, 8, 0, 8, 0, 8, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0
+			]
+		},
+		{
+			"ID" : 13,
+			"name" : "Tail Strobe Light",
+			"description" : "Typical wide Pulse Tail Strobe Light",
+			"seq" :
+			[
+				8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+			]
+		},
+		{
+			"ID" : 14,
+			"name" : "Nav Strobe Light",
+			"description" : "Combination of Navigation Light (Pos Light) and wide single Pulse Strobe Light, used also as Tail Navigation Strobe Light.",
+			"seq" :
+			[
+				8, 8, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+			]
+		},
+		{
+			"ID" : 15,
+			"name" : "WigWag 1",
+			"description" : "Pulse Recognition Light,  Wig-Phase with afterglowing effect",
+			"seq" :
+			[
+				8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+			]
+		},
+		{
+			"ID" : 16,
+			"name" : "WigWag 2 (inv. WigWag 1)",
+			"description" : "Pulse Recognition Light, Wag-Phase with afterglowing effect (inverse to WigWag 1)",
+			"seq" :
+			[
+				1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8
+			]
+		},
+		{
+			"ID" : 17,
+			"name" : "WigWag 3",
+			"description" : "Pulse Recognition Light  Wig-Phase",
+			"seq" :
+			[
+				8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+			]
+		},
+		{
+			"ID" : 18,
+			"name" : "WigWag 4 (inv. WigWag 3)",
+			"description" : "Pulse Recognition Light  Wag-Phase (inverse to WigWag 3)",
+			"seq" :
+			[
+				0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8
+			]
+		}
+	]
+}

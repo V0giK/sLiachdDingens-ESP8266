@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="de"> 
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>FlightLight - Config</title>
+		<link rel="stylesheet" type="text/css" href="css/index_html.css">
+		<link rel="stylesheet" type="text/css" href="css/w3.css">
+		<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+		<script type="text/javascript" src="js/functions.js"></script>
+	</head>
+	<body>
+		<noscript>
+			<strong>Die FlightLight Konfiguration funktioniert nicht ohne JavaScript. Biite aktiviere JavaScript und versuche es erneut.</strong>
+		</noscript>
+		<!-- Menü -->
+		<div id="includedMenuContent"></div>
+		<!-- Akku Einstellungen -->
+		<div class="textstyle1">
+			<!-- Kalibrieren -->
+			<div class="container_2572aa03">
+				<div class="container_2572aa03_padding" >
+					<div class="textstyle1">
+						<label class="textstyle4">Akku<br/></label>
+						<div id="form_sequence_padding" >
+							<!-- Kalibrieren -->
+							<div class="textstyle1">
+								<div onclick="document.getElementById('idCalibrate').style.display='block';" title="Spannung kalibrieren" style="cursor:pointer">
+									Spannung: <span id="curVolt"></span>V (<span id="curCellCnt">0</span>S)  <img src="conf2.png" width="15px" height="15px" alt="calibrate" title="Spannung kalibrieren">
+								</div><br/>
+							</div>
+
+							<div class="textstyle1" id="idCalibrate" style="display:none">
+								<label class="textstyle4" for="istVolt">Gemessene Spannung</label>
+								<input class="LPNAME" style="width:50px" type="number" value="" title="" name="istVolt" id="istVolt" >
+								<button type="button" onClick="setVolt(document);" value="calib" title="Kalibrieren">Kalibrieren</button>
+							</div>
+							<div style="clear:both"></div>
+						</div>
+					</div>
+					<div style="clear:both"></div>
+				</div>
+			</div>
+
+			<form action="/config_lpdesc2" enctype="application/x-www-form-urlencoded" method="POST" id="formular" >
+
+				<!-- Daten Batterie -->
+				<div class="container_2572aa03">
+					<div class="container_2572aa03_padding" >
+						<div class="textstyle1">
+							<h2 class="textstyle4">Grenzwerte</h2>
+							<div id="form_sequence_padding" >
+								<div class="textstyle1">
+									<!-- Grenzspannungen -->
+									<label class="textstyle4" id="idWarningLabel">Warnung aktivieren (hell/dunkel)</label><br/>
+									<input class="LPNAME" style="width:50px" type="number" value="0" title="" name="warningVolt" id="warningVolt" >
+									<label class="textstyle4">(Volt/Zelle)</label>
+									<span class="textstyle4"><br/><br/></span>
+									<label class="textstyle4" id="idCutOffLabel">CutOff (ausschalten - DeepSleep)</label><br/>
+									<input class="LPNAME" style="width:50px" type="number" value="0" title="" name="cutOffVolt" id="cutOffVolt" >
+									<label class="textstyle4">(Volt/Zelle)</label>
+									<span class="textstyle4"><br/></span>
+								</div>
+								<div style="clear:both"></div>
+							</div>
+						</div>
+						<div style="clear:both"></div>
+					</div>
+				</div>
+
+				<!-- Save Button -->
+				<div><br/><br/></div>
+				<div class="w3-bar menuRow w3-bottom">
+					<button class="w3-bar-item w3-button" type="button" form="formular" onClick="setFormSubmitted(true);saveForm('/config_config', 'save', form);" value="save" title="Speichern">Speichern</button>
+					<button class="w3-bar-item w3-button w3-right" type="button" form="form_pwr" onClick="resetEsp();" value="HW_Reset" title="Neu starten">HW Reset</button>
+				</div>
+			</form>
+		</div>
+
+		<!-- Modal Box -->
+		<div id="MsgBox"></div>
+
+	</body>
+	<script type="text/javascript">
+		// Objekt des Formulars das zum speichern dessen als Parameter an saveForm() mitgegeben werden muss
+		let form = document.forms["formular"];
+
+		// MsgBox erstellen
+		crtMsgBox("Info");
+		// config.json einlesen
+		readConfig();
+		// setTitel
+		setTitel("Config - Akku");
+
+		//getVolt();
+		setInterval(getVolt,1000);
+		setInterval(getCellCnt,1000);
+		
+		getVoltThreshold();
+		setCutOffLabel();
+
+		// beim verlassen der Seite prüfen ob schon gespeichert wurde
+		checkFormOnLeaveConfig_html();
+
+
+		'use strict';
+
+		function setCutOffLabel(){
+			document.getElementById("idCutOffLabel").innerHTML = "CutOff (" + gConfigObj["ProductName"] + " ausschalten - DeepSleep)";
+		}
+
+		function getCellCnt(callbackSetHtmlCurCellCnt=setHtmlCurCellCnt, callbackStatus=displayMsgBox){
+			let xhr = new XMLHttpRequest();
+			xhr.onreadystatechange = function() {
+				if (xhr.readyState != 4) {
+					return;
+				}
+				// Server-Antwort ist eingetroffen!
+				if (this.status >= 300) {
+					callbackStatus("Es ist ein Fehler aufgetreten:\n" + this.status);
+				} else {
+					callbackSetHtmlCurCellCnt(this.response);
+				}
+			}
+
+			xhr.open("POST", "/batt_cell", true);
+			xhr.send();
+		}
+		function setHtmlCurCellCnt(val){
+			document.getElementById("curCellCnt").innerHTML = val;
+		}
+		function getVolt(callbackSetHtmlCurVolt=setHtmlCurVolt, callbackStatus=displayMsgBox){
+			let xhr = new XMLHttpRequest();
+			xhr.onreadystatechange = function() {
+				if (xhr.readyState != 4) {
+					return;
+				}
+				// Server-Antwort ist eingetroffen!
+				if (this.status >= 300) {
+					callbackStatus("Es ist ein Fehler aufgetreten:\n" + this.status);
+				} else {
+					callbackSetHtmlCurVolt(this.response);
+				}
+			}
+
+			xhr.onload = function() {
+				//callbackSetHtmlCurVolt(this.response);
+			};
+
+			xhr.open("POST", "/batt_voltage", true);
+			xhr.send();
+		}
+		function setHtmlCurVolt(val){
+			document.getElementById("curVolt").innerHTML = val;
+		}
+
+		function setVolt(obj, callbackSetHtmlCurVolt=setHtmlCurVolt, callbackStatus=displayMsgBox){
+			let xhr = new XMLHttpRequest();
+			xhr.onreadystatechange = function() {
+				if (xhr.readyState != 4) {
+					return;
+				}
+				// Server-Antwort ist eingetroffen!
+				if (this.status >= 200 && this.status <= 299) {
+					// Server-Antwort in Ordnung
+					callbackStatus("Kalibrierung durchgef&uuml;hrt");
+					callbackSetHtmlCurVolt(this.response);
+				} else {
+					let sTitle = "Es ist ein Fehler aufgetreten:" + this.status;
+					let sMessage = String(this.response);
+					callbackStatus(sMessage, sTitle);
+				}
+			}
+
+			xhr.onload = function() {
+				//callbackSetHtmlCurVolt(this.response);
+			};
+
+			let fd = new FormData();
+			fd.append("curVolt", obj.getElementById("curVolt").innerHTML);
+			fd.append("istVolt", obj.getElementById("istVolt").value);
+			xhr.open("POST", "/batt_calib", true);
+			xhr.send(fd);
+		}
+
+		function getVoltThreshold(){
+			document.getElementById("warningVolt").value = gConfigObj["Batt"]["warningVolt"];
+			document.getElementById("cutOffVolt").value = gConfigObj["Batt"]["cutOffVolt"];
+		}
+
+	</script>
+</html>
