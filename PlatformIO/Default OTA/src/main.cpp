@@ -95,6 +95,9 @@ void setup(void) {
 
   server.begin();
   Serial.println("HTTP server started");
+
+  pinMode(D4, OUTPUT);
+  digitalWrite(D4,LOW);
 }
 
 void loop(void) {
