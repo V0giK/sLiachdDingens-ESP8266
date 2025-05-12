@@ -6,7 +6,7 @@ Einfache 5-Kanal Modellflug Beleuchtungssteuerung
 
 - 5 Ports (3x 500mA, 2x 1A)
 - je Port 2 Steckplätze
-- 1-3 S Lipo (Auto Erkennung)
+- 1-3 S (Auto Erkennung)
 - 3 LightProfile
 - Betrieb auch ohne RC Anlage möglich
 - Konfiguration über Browser (WLAN-AccessPoint)
@@ -27,19 +27,13 @@ Einfache 5-Kanal Modellflug Beleuchtungssteuerung
 ### Lötreihenfolge
 1. SMD Bauteile
 2. Kabel
-
----
     
 ### Initial Firmware Upload
-
 > 1. Filesystem Upload - **inkl. HW.json** - (Initialwerte für EEPROM)
 > 2. Firmware Upload
 > 3. fertig😉
 
----
-
 ### Komponenten
-
 - ESP8266
 - ULA2003A
 - ...
