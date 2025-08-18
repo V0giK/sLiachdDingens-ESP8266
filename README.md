@@ -1,50 +1,93 @@
 # sLiachdDingens-ESP8266
-Einfache 5-Kanal Modellflug Beleuchtungssteuerung
 
-> **under developmet**
+**🛩️ Einfache 5-Kanal Modellflug Beleuchtungssteuerung**
 
+Eine ESP8266-basierte Beleuchtungssteuerung für Modellflugzeuge mit webbasierter Konfiguration und flexiblen Lichtprofilen.
 
-- 5 Ports (3x 500mA, 2x 1A)
-- je Port 2 Steckplätze
-- 1-3 S (Auto Erkennung)
-- 3 LightProfile
-- Betrieb auch ohne RC Anlage möglich
-- Konfiguration über Browser (WLAN-AccessPoint)
-	- Akku Überwachung (LowBatt Warnung, CutOff) - Spannungen einstellbar
-	- RC Kanal 1 - LightProfile schalten (3 PosSchalter)
-	- RC Kanal 2 - LowPower/MaxPower (2 PosSchalter oder Taster)
-	- Startposition der RC Kanäle einstellbar (erst nach erreichen dieser Position kann diese geändert werden)
-	- Auswählbare Blinksequencen (alle Ausgänge)
-	- frei einstellbare Blinksequencen (alle Ausgänge)
-	- Firmware Update möglich (OTA)
-	- Download der Einstellungen möglich
-	- Sicherung des Profils
+## ✨ Features
 
----
+### Hardware
+- **5 Ausgänge**: 3x 500mA, 2x 1A Belastbarkeit
+- **Doppelte Anschlüsse**: Je Port 2 Steckplätze verfügbar
+- **Universelle Stromversorgung**: 1-3S LiPo mit automatischer Erkennung
+- **Kompaktes Design**: Optimiert für den Einbau in Modellflugzeuge
 
-## Aufbau
+### Software
+- **3 LightProfile**: Verschiedene Beleuchtungsmodi
+- **Standalone-Betrieb**: Funktioniert auch ohne RC-Anlage
+- **Web-Interface**: Konfiguration über WLAN-AccessPoint im Browser
+- **RC-Integration**: 
+  - Kanal 1: LightProfile-Umschaltung (3-Pos-Schalter)
+  - Kanal 2: LowPower/MaxPower-Modus (2-Pos-Schalter oder Taster)
+- **Intelligente Akkuüberwachung**: 
+  - LowBatt-Warnung
+  - Konfigurierbarer CutOff-Schutz
+- **Flexible Blinksequenzen**: 
+  - Vorgefertigte Sequenzen
+  - Frei konfigurierbare Muster
+- **OTA-Updates**: Firmware-Updates über WLAN
+- **Backup-Funktion**: Download und Sicherung der Einstellungen
 
-### Lötreihenfolge
-1. SMD Bauteile
-2. Kabel
-    
-### Initial Firmware Upload
-> 1. Filesystem Upload - **inkl. HW.json** - (Initialwerte für EEPROM)
-> 2. Firmware Upload
-> 3. fertig😉
+## 🔧 Installation
 
-### Komponenten
-- ESP8266
-- ULA2003A
-- ...
+### Hardware-Aufbau
 
+**Lötreihenfolge:**
+1. SMD-Bauteile zuerst löten
+2. Anschlusskabel montieren
 
----
+**Hauptkomponenten:**
+- ESP8266 Mikrocontroller
+- ULA2003A Treiber-IC
+- Weitere Komponenten (siehe Schaltplan)
 
-## Lizenz
+### Software-Installation
+
+> ⚠️ **Wichtig**: Reihenfolge beachten!
+
+1. **Filesystem Upload** - Beinhaltet die wichtige `HW.json` mit EEPROM-Initialwerten
+2. **Firmware Upload**
+3. **Fertig!** 😉
+
+## 🚀 Erste Schritte
+
+1. ESP8266 mit Strom versorgen
+2. WLAN-AccessPoint suchen (sLiachdDingens-XXXX)
+3. Mit dem AccessPoint verbinden
+4. Browser öffnen und zur Konfigurationsseite navigieren
+5. Grundeinstellungen vornehmen:
+   - Akkuspannungen konfigurieren
+   - RC-Kanäle zuweisen
+   - LightProfile anpassen
+
+## 📋 Technische Daten
+
+| Spezifikation | Wert |
+|---------------|------|
+| Eingangsspannung | 1-3S LiPo (3.7V - 12.6V) |
+| Ausgänge | 5 Kanäle |
+| Ausgangsleistung | 3x 500mA, 2x 1A |
+| Mikrocontroller | ESP8266 |
+| Konfiguration | Web-Interface über WLAN |
+| RC-Kanäle | 2 (optional) |
+
+## 🔄 Entwicklungsstatus
+
+> **🚧 In Entwicklung**
+> 
+> Dieses Projekt befindet sich aktiv in der Entwicklung. Features können sich ändern und neue Funktionen werden kontinuierlich hinzugefügt.
+
+## 🤝 Beitragen
+
+Feedback, Bug-Reports und Verbesserungsvorschläge sind willkommen! Erstellen Sie gerne ein Issue oder einen Pull Request.
+
+## 📄 Lizenz
 
 Dieses Projekt steht unter der [GNU GPL v3](LICENSE).  
 Copyright © 2025 V0giK
 
-Alle Abwandlungen und Forks dieses Projekts müssen ebenfalls
-unter den Bedingungen der GNU GPL v3 stehen.
+Alle Abwandlungen und Forks dieses Projekts müssen ebenfalls unter den Bedingungen der GNU GPL v3 stehen.
+
+---
+
+**Made with ❤️ für die Modellflug-Community**
