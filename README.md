@@ -32,22 +32,32 @@ Eine ESP8266-basierte Beleuchtungssteuerung für Modellflugzeuge mit webbasierte
 
 ### Hardware-Aufbau
 
-**Lötreihenfolge:**
-1. SMD-Bauteile zuerst löten
-2. Anschlusskabel montieren
+> ⚠️ **Wichtiger Hinweis**: Der ESP8266 sollte idealerweise **vor dem Einlöten** mit der OTA-fähigen Firmware geflasht werden! Als SMD-Bauteil ist das Flashen nach dem Verlöten über die seriellen Pins deutlich schwieriger zugänglich.
+
+**Empfohlene Reihenfolge:**
+1. **ESP8266 vorbereiten**: Filesystem und Firmware flashen (siehe Software-Installation)
+2. **ESP8266 einlöten**: Bereits vorbereiteten ESP8266 SMD-Bauteil einbauen
+3. **Weitere SMD-Bauteile löten**: ULA2003A und andere oberflächenmontierte Komponenten
+4. **Anschlusskabel montieren**: Abschließende Verkabelung
 
 **Hauptkomponenten:**
-- ESP8266 Mikrocontroller
-- ULA2003A Treiber-IC
-- Weitere Komponenten (siehe Schaltplan)
+- ESP8266 Mikrocontroller (SMD)
+- ULA2003A Treiber-IC (SMD)
+- Weitere SMD-Komponenten (siehe Schaltplan)
 
 ### Software-Installation
 
 > ⚠️ **Wichtig**: Reihenfolge beachten!
 
+**Initial-Flash (vor dem Einlöten stark empfohlen):**
 1. **Filesystem Upload** - Beinhaltet die wichtige `HW.json` mit EEPROM-Initialwerten
 2. **Firmware Upload**
-3. **Fertig!** 😉
+3. **Funktionstest** durchführen
+4. **ESP8266 auf die Platine löten**
+
+**Alternative (nach dem Einlöten):**
+- OTA-Updates über das Web-Interface möglich
+- Serielle Programmierung über die Programmierpins (bei SMD deutlich schwieriger)
 
 ## 🚀 Erste Schritte
 
@@ -67,7 +77,7 @@ Eine ESP8266-basierte Beleuchtungssteuerung für Modellflugzeuge mit webbasierte
 | Eingangsspannung | 1-3S LiPo (3.7V - 12.6V) |
 | Ausgänge | 5 Kanäle |
 | Ausgangsleistung | 3x 500mA, 2x 1A |
-| Mikrocontroller | ESP8266 |
+| Mikrocontroller | ESP8266 (SMD) |
 | Konfiguration | Web-Interface über WLAN |
 | RC-Kanäle | 2 (optional) |
 
