@@ -13,9 +13,9 @@
 */
 
 
+#include "WiFi_WebServerHandling.h"  // pulls in <ESPAsyncWebServer.h>
+#include <ElegantOTA.h>              // include AFTER AsyncWebServer to avoid HTTP_* enum conflicts
 #include <LittleFS.h>
-#include <AsyncElegantOTA.h>
-#include "WiFi_WebServerHandling.h"
 #include "GlobalFnc.h"
 
 #include "globalvariables.h"
@@ -95,7 +95,7 @@ void WiFi_WebServerHandling::AP_starten()  // INI im Access Point Modus
     server.on("/uploadFinish", HTTP_ANY, [](AsyncWebServerRequest *request) {  // Datei in ESP hochladen
         const char* sRet = "Upload durchgef&uuml;hrt";
         if(request->params() > 0) {
-            AsyncWebParameter* p = request->getParam("erg");
+            const AsyncWebParameter* p = request->getParam("erg");
             if(String(p->value().c_str()) != "true"){
                 sRet = "Upload fehlgeschlagen";
             }
@@ -329,7 +329,7 @@ void WiFi_WebServerHandling::AP_starten()  // INI im Access Point Modus
     MDNS.addService("http", "tcp", 80);
 */
 
-    AsyncElegantOTA.begin(&server);    // Start ElegantOTA
+    ElegantOTA.begin(&server);    // Start ElegantOTA (v3, Async backend forced via build flag)
     server.begin();
     #ifdef DEV_SERIAL_OUT
     Serial.println(F("HTTP Server gestarted"));

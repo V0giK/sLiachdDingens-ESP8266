@@ -15,7 +15,6 @@
 
 #include "JsonHelper2.h"
 #include <LittleFS.h>
-#include <AsyncJson.h> // wird im AsyncWebServer verwendet
 
 #include "globalvariables.h"
 #include "GlobalFnc.h"
